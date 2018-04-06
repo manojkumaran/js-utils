@@ -3,16 +3,15 @@
     If array can't be split evenly, the final chunk will be the remaining elements.
 
     Sample:
-    chunk(['a', 'b', 'c', 'd'], 2);
+    chunk(['a', 'b', 'c', 'd'],2);
     [['a', 'b'], ['c', 'd']]
 
-    chunk(['a', 'b', 'c', 'd'], 3);
+    chunk(['a', 'b', 'c', 'd'],3);
     [['a', 'b', 'c'], ['d']]
 */
 
-Array.prototype.chunk = function(size){
+const chunk = (arr,size) => {
     let finalArr = [];
-    const arr = this;
     size = Math.max(size,0);
     const arrLen = arr == null? 0 : arr.length;
 
@@ -27,4 +26,4 @@ Array.prototype.chunk = function(size){
 }
 
 let arr = ['a','b','c','d','e',[1,3,4]];
-console.log( arr.chunk(1) )
+console.log( chunk(arr,1) )
